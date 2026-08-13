@@ -2,6 +2,22 @@ console.log("JS loaded");
 
 let loaded = false;
 
+const logo = document.getElementById("logo");
+
+window.addEventListener("scroll", () => {
+
+    const scroll = window.scrollY;
+
+    const progress = Math.min(scroll / 500, 1);
+
+    const scale = 1 - progress * 0.7;
+
+    logo.style.transform = `scale(${scale})`;
+});
+
+
+
+/*/*/
 document.getElementById("susvidbtn").onclick = function () {
     if (loaded) return;
 
